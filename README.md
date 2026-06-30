@@ -1,114 +1,158 @@
-🚨 Detecção de Fraudes em Transações Financeiras com Machine Learning
+# 🚨 Detecção de Fraudes em Transações Financeiras com Machine Learning
 
-Este projeto tem como objetivo construir um sistema de detecção de fraudes em transações financeiras utilizando técnicas de Machine Learning, incluindo Feature Engineering, Balanceamento de Dados, Modelos Preditivos e Explicabilidade com SHAP.
+![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
+![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Scikit--Learn-orange)
+![XGBoost](https://img.shields.io/badge/Model-XGBoost-green)
+![Status](https://img.shields.io/badge/Status-Concluído-brightgreen)
+![SHAP](https://img.shields.io/badge/Explainability-SHAP-purple)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
-📊 Dataset
+---
+
+## 📊 Sobre o Projeto
+
+Este projeto tem como objetivo construir um sistema de **detecção de fraudes em transações financeiras** utilizando técnicas de Machine Learning, incluindo:
+
+- Feature Engineering  
+- Balanceamento de dados  
+- Modelos preditivos  
+- Explicabilidade com SHAP  
+
+---
+
+## 📊 Dataset
 
 O dataset utilizado contém transações financeiras com variáveis como:
 
-valor da transação (amt)
-comerciante (merchant)
-categoria (category)
-localização (city, state)
-informações do cliente (idade, profissão, etc.)
-variável alvo: is_fraud
+- Valor da transação (`amt`)  
+- Comerciante (`merchant`)  
+- Categoria (`category`)  
+- Localização (`city`, `state`)  
+- Informações do cliente (idade, profissão, etc.)  
+- Variável alvo: `is_fraud`  
 
-🎯 Objetivo
+---
 
-Desenvolver modelos capazes de identificar transações fraudulentas com alta precisão, mesmo em um cenário altamente desbalanceado.
+## 🎯 Objetivo
 
-⚙️ Tecnologias utilizadas
-Python 
-Pandas
-NumPy
-Scikit-learn
-Imbalanced-learn (SMOTE)
-XGBoost
-Matplotlib
-SHAP
+Desenvolver modelos capazes de identificar transações fraudulentas com **alta precisão**, mesmo em um cenário altamente desbalanceado.
 
-🧠 Etapas do Projeto
-1. Importação e análise dos dados
-Carregamento do dataset
-Verificação da distribuição das classes
+---
 
-2. Feature Engineering
-Foram criadas novas variáveis a partir de datas:
+## ⚙️ Tecnologias Utilizadas
 
-hora da transação (hour)
-dia (day)
-mês (month)
-dia da semana (weekday)
-idade do cliente (age)
+- Python  
+- Pandas  
+- NumPy  
+- Scikit-learn  
+- Imbalanced-learn (SMOTE)  
+- XGBoost  
+- Matplotlib  
+- SHAP  
 
-3. Pré-processamento
-One-Hot Encoding para variáveis categóricas
-StandardScaler para variáveis numéricas
+---
 
-4. Balanceamento de dados
-Foi aplicado SMOTE (Synthetic Minority Over-sampling Technique) para equilibrar a classe de fraude:
+## 🧠 Etapas do Projeto
 
-Antes: altamente desbalanceado
-Depois: classes balanceadas no conjunto de treino
+### 📌 1. Importação e Análise dos Dados
+- Carregamento do dataset  
+- Verificação da distribuição das classes  
 
-🤖 Modelos utilizados
-📌 Regressão Logística
-com class_weight="balanced"
-baseline do problema
-📌 XGBoost 
-modelo principal do projeto
-alta capacidade de captura de padrões complexos
-📌 Random Forest
-otimizado com GridSearchCV
-🔧 Otimização de hiperparâmetros
+### 🔧 2. Feature Engineering
+Criação de variáveis a partir de datas:
 
-Foi utilizado GridSearchCV para:
+- Hora da transação (`hour`)  
+- Dia (`day`)  
+- Mês (`month`)  
+- Dia da semana (`weekday`)  
+- Idade do cliente (`age`)  
 
-Random Forest tuning
-busca por melhores parâmetros com validação cruzada
+### ⚙️ 3. Pré-processamento
+- One-Hot Encoding para variáveis categóricas  
+- StandardScaler para variáveis numéricas  
 
-📈 Resultados
-🔹 Regressão Logística (com SMOTE)
-Recall fraude: ~0.52
-Precision fraude: ~0.44
-🔹 XGBoost
-Recall fraude: ~0.82
-Precision fraude: ~0.97
-Excelente desempenho geral
-🔹 Random Forest (GridSearchCV)
-Modelo otimizado com F1-score como métrica principal
+### ⚖️ 4. Balanceamento de Dados
+Aplicação de **SMOTE (Synthetic Minority Over-sampling Technique)**:
 
-📊 Avaliação dos modelos
+- Antes: dataset altamente desbalanceado  
+- Depois: classes equilibradas no conjunto de treino  
 
-Foram utilizadas métricas como:
+---
 
-Precision
-Recall
-F1-score
-ROC Curve
-Precision-Recall Curve
-AUC Score
+## 🤖 Modelos Utilizados
 
-🔍 Explicabilidade (SHAP)
+### 📌 Regressão Logística
+- `class_weight="balanced"`  
+- Modelo baseline  
 
-Foi utilizado SHAP (SHapley Additive exPlanations) para:
+### 📌 XGBoost
+- Modelo principal do projeto  
+- Alta capacidade de capturar padrões complexos  
 
-entender as variáveis mais importantes
-interpretar o impacto de cada feature no modelo
-aumentar transparência do modelo
+### 📌 Random Forest
+- Otimizado com GridSearchCV  
+- Ajuste de hiperparâmetros  
 
-📌 Principais insights
-O dataset é altamente desbalanceado
-SMOTE melhora significativamente o recall
-XGBoost apresentou melhor equilíbrio entre precisão e recall
-Variáveis temporais e valor da transação são altamente relevantes
+---
 
-🚀 Conclusão
+## 🔧 Otimização de Hiperparâmetros
 
-O projeto demonstra um pipeline completo de Machine Learning aplicado à detecção de fraudes, incluindo:
+Utilização de **GridSearchCV** para otimizar o Random Forest com validação cruzada.
 
-engenharia de variáveis
-tratamento de desbalanceamento
-comparação de modelos
-tuning de hiperparâmetros
-interpretabilidade com SHAP
+---
+
+## 📈 Resultados
+
+### 🔹 Regressão Logística (com SMOTE)
+- Recall fraude: ~0.52  
+- Precision fraude: ~0.44  
+
+### 🔹 XGBoost
+- Recall fraude: ~0.82  
+- Precision fraude: ~0.97  
+- Melhor desempenho geral  
+
+### 🔹 Random Forest (GridSearchCV)
+- Modelo otimizado com foco em F1-score  
+
+---
+
+## 📊 Métricas de Avaliação
+
+- Precision  
+- Recall  
+- F1-score  
+- ROC Curve  
+- Precision-Recall Curve  
+- AUC Score  
+
+---
+
+## 🔍 Explicabilidade (SHAP)
+
+Uso do **SHAP (SHapley Additive exPlanations)** para:
+
+- Interpretar variáveis mais importantes  
+- Entender impacto das features no modelo  
+- Aumentar transparência do sistema  
+
+---
+
+## 📌 Principais Insights
+
+- Dataset altamente desbalanceado  
+- SMOTE melhora significativamente o recall  
+- XGBoost apresentou melhor equilíbrio entre precisão e recall  
+- Variáveis temporais e valor da transação são altamente relevantes  
+
+---
+
+## 🚀 Conclusão
+
+Este projeto demonstra um pipeline completo de Machine Learning aplicado à detecção de fraudes:
+
+- Engenharia de variáveis  
+- Tratamento de desbalanceamento  
+- Comparação de modelos  
+- Otimização de hiperparâmetros  
+- Interpretabilidade com SHAP  
