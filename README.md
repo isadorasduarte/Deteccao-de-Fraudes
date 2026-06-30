@@ -3,9 +3,8 @@
 ![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
 ![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Scikit--Learn-orange)
 ![XGBoost](https://img.shields.io/badge/Model-XGBoost-green)
-![Status](https://img.shields.io/badge/Status-Concluído-brightgreen)
 ![SHAP](https://img.shields.io/badge/Explainability-SHAP-purple)
-![License](https://img.shields.io/badge/License-MIT-lightgrey)
+
 
 ---
 
